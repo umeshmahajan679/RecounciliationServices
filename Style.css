@@ -1,0 +1,73 @@
+
+.card-body {
+  flex: 1 1 auto;
+  padding: 1rem; }
+.content-wrapper {
+  background: #f2f8f9;
+  padding: 1.5rem 1.7rem;
+  width: 100%;
+  -webkit-flex-grow: 1;
+  flex-grow: 1; }
+.container-fluid {
+  width: 100%;
+  padding-right: 12.5px;
+  padding-left: 12.5px;
+  margin-right: auto;
+  margin-left: auto; }
+
+  .page-body-wrapper {
+  min-height: calc(100vh - 55px);
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  padding-left: 0;
+  padding-right: 0; }
+  
+  .page-body-wrapper:not(.auth-page) {
+    padding-top: 55px; }
+  .page-body-wrapper.full-page-wrapper {
+    width: 100%;
+    min-height: 100vh; }
+
+.container-scroller {
+  overflow: hidden; }
+  
+.main-panel {
+	
+  transition: width 0.25s ease, margin 0.25s ease;
+  width: calc(100% - 70px);
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column; }
+
+.card-title {
+  margin-bottom: 0.75rem; }
+
+/* .table {
+  margin-bottom: 0; }
+  .table thead th {
+    border-top: 0;
+    border-bottom-width: 1px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500; }
+    .table thead th i {
+      margin-left: 0.325rem; }
+  .table td,
+  .table th {
+    vertical-align: middle;
+    font-size: 13px;
+    line-height: 1;
+  white-space: nowrap;
+  text-align: center; }
+
+ */
+
+.card {
+  border: 0;
+  border-radius: 2px; }
+  .card .card-body {
+    padding: 1rem 1rem; }
+    .card .card-body + .card-body {
+      padding-top: 0; }

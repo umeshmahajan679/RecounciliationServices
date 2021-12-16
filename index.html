@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>RecounciliationService </title>
+	<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="Recounciliation/RecounciliationService.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="Stylecss/Style.css">
+
+</head>
+
+<body>
+
+	<div class="container-fluid page-body-wrapper" id="wrapper">
+
+		<div class="content-wrapper">
+			<div class="card-body">
+				<div id="form_container">
+					<div align="center">
+						<h2 class="text-dark"><b>Welcome To Recounciliation Services.</b></h2>
+					</div>
+					<div th:switch="${reconciliationServiceModels}">
+						<h2 th:case="null">No Rules And Condition yet!</h2>
+						<div th:case="*">
+							<br><br>
+							<h2>Recounciliation Rules And Condition</h2>
+							<table class="table table-striped table-borered table-responsive-md">
+								<thead>
+									<tr class="table-primary">
+										<th scope="col">Rule Name</th>
+										<th scope="col">Rule Version</th>
+										<th scope="col">Rule Priority</th>
+										<th scope="col">Active</th>
+										 <th scope="col">Field</th>
+										<th scope="col">Condition</th>
+										<th scope="col">Value</th> 
+										<th scope="col">Edit</th>
+										<th scope="col">Delete</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr th:each="reconciliationServiceModel : ${reconciliationServiceModels}">
+										<td th:text="${reconciliationServiceModel.RuleName}"></td>
+										<td th:text="${reconciliationServiceModel.RuleVersion}"></td>
+										<td th:text="${reconciliationServiceModel.RulePriority}"></td>
+										<td th:text="${reconciliationServiceModel.IsActive}"></td>
+										 <td th:text="${reconciliationServiceModel.fielddata}"></td>
+										<td th:text="${reconciliationServiceModel.Conditiondata}"></td>
+										<td th:text="${reconciliationServiceModel.Valuedata}"></td>
+ 
+										<td><a th:href="@{/edit/{id}(id=${reconciliationServiceModel.id})}"
+												class="btn btn-primary"> <i class="fas fa-user-edit ml-2"></i></a></td>
+										<td><a th:href="@{/delete/{id}(id=${reconciliationServiceModel.id})}"
+												class="btn btn-primary"><i class="fas fa-user-times ml-2"></i></a></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<br><br><br><br>
+						<p><a class="btn btn-primary gmd-4" href="/addData">Add a new Service</a></p>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>
